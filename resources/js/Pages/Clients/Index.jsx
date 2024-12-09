@@ -1,10 +1,19 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 
 export default function Index({ clients }) {
     const clientData = clients?.data || [];
 
     return (
         <div className="container mx-auto p-6">
+            <div className="mb-6">
+                <Link
+                    href={route('dashboard')}
+                    className="px-4 py-2 bg-indigo-600 text-white rounded shadow-md hover:bg-indigo-700 transition"
+                >
+                    Back to Dashboard
+                </Link>
+            </div>
             <h1 className="text-4xl font-extrabold mb-6 text-center text-gray-800 tracking-wide">
                 Clients
             </h1>
@@ -12,7 +21,6 @@ export default function Index({ clients }) {
                 <table className="table-auto w-full border-collapse border border-gray-300 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
                     <thead className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md">
                         <tr>
-                            {/* Avatar Column with smaller width */}
                             <th className="border px-4 py-3 text-left text-lg font-semibold tracking-wider w-1/6">
                                 Avatar
                             </th>
@@ -33,7 +41,6 @@ export default function Index({ clients }) {
                                 key={client.id}
                                 className="hover:bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-200 transition duration-300"
                             >
-                                {/* Avatar Column with centered image */}
                                 <td className="border px-6 py-4 text-center">
                                     <img
                                         src={`/storage/${client.avatar}`}

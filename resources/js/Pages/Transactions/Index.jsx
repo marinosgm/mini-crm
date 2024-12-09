@@ -1,10 +1,19 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 
 export default function Index({ transactions }) {
     const transactionData = transactions?.data || [];
 
     return (
         <div className="container mx-auto p-6">
+            <div className="mb-6">
+                <Link
+                    href={route('dashboard')}
+                    className="px-4 py-2 bg-indigo-600 text-white rounded shadow-md hover:bg-indigo-700 transition"
+                >
+                    Back to Dashboard
+                </Link>
+            </div>
             <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-800 tracking-wide">
                 Transactions
             </h1>
